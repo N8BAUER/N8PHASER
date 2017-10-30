@@ -3,6 +3,6 @@ resume, images, additional assets, & of course the code used to construct the si
 This will be an ongoing project for the rest of my career that I hope to update at least
 twice a year.  
 
-Start date = 10-27-2017
+Start date = 10-27-2017 (lies)
 
 */
