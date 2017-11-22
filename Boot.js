@@ -12,26 +12,26 @@ N8.Boot.prototype = {
         this.input.maxPointers = 1;
 
         //  Phaser will automatically pause if the browser tab the game is in loses focus. You can disable that here:
-        this.stage.disableVisibilityChange = true;
+        this.stage.disableVisibilityChange = false;
 
         //  This tells the game to resize the renderer to match the game dimensions (i.e. 100% browser width / height)
         this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
 
+
+
         this.input.addPointer();
-        this.stage.backgroundColor = "rgb(176, 172, 175)";
+        this.stage.backgroundColor = "rgba(56, 55, 62, 0.82)";
 
     },
 
     preload: function () {
-
-
         //  Here we load the assets required for our preloader (in this case a background and a loading bar)
+        this.load.image('titleimage', 'images/N8BAUER.png');
         this.load.image('preloaderBar', 'images/loader_bar.png');
-        this.load.image('titleimage', 'images/N8BAUER.png')
     },
 
-    create: function () {
 
+    create: function () {
         //  By this point the preloader assets have loaded to the cache, we've set the game settings
         //  So now let's start the real preloader going
         this.state.start('Preloader');
