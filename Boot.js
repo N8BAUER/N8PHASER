@@ -2,6 +2,7 @@ var N8 = {};
 
 N8.Boot = function (game) {
 
+
 };
 
 N8.Boot.prototype = {
@@ -15,7 +16,12 @@ N8.Boot.prototype = {
         this.stage.disableVisibilityChange = false;
 
         //  This tells the game to resize the renderer to match the game dimensions (i.e. 100% browser width / height)
-        this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.scale.pageAlignHorizontally = true;
+        this.scale.pageAlignVertically = true;
+
+
+
 
 
 
@@ -26,16 +32,25 @@ N8.Boot.prototype = {
 
     preload: function () {
         //  Here we load the assets required for our preloader (in this case a background and a loading bar)
-        this.load.image('titleimage', 'images/N8BAUER.png');
+        this.load.image('titleimage', 'images/n8black.png');
         this.load.image('preloaderBar', 'images/loader_bar.png');
+        this.load.image('arrowDown', 'background/arrowDown.png');
+        this.load.image('arrowLeft', 'background/arrowLeft.png');
+        this.load.image('arrowRight', 'background/arrowRight.png');
+        this.load.image('arrowUp', 'background/arrowUp.png');
+        this.load.image('buttonStart', 'background/buttonStart.png')
     },
 
 
     create: function () {
         //  By this point the preloader assets have loaded to the cache, we've set the game settings
         //  So now let's start the real preloader going
-        this.state.start('Preloader');
+        this.preloadIt()
 
+    },
+
+    preloadIt: function(game){
+        this.time.events.add(Phaser.Timer.SECOND * 4,this.state.start('Preloader'));
     }
 
 };

@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" >
 	<title>Phaser Responsive Project Template</title>
 	<script src="libs/phaser.js"></script>
 	<script src="Boot.js"></script>
 	<script src="Preloader.js"></script>
 	<script src="StartMenu.js"></script>
-	<!-- <script src="libs/Game.js"></script> -->
+	<script src="Game.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <style>
         body {
@@ -28,7 +28,7 @@
 window.onload = function() {
 
 	//	100% of window - see Boot.js for additional configuration
-	var game = new Phaser.Game("100%", "100%", Phaser.AUTO, 'gameContainer');
+	var game = new Phaser.Game('100%', '100%', Phaser.AUTO, 'gameContainer');
 
 
 
@@ -37,7 +37,7 @@ window.onload = function() {
 	game.state.add('Boot', N8.Boot);
 	game.state.add('Preloader', N8.Preloader);
 	game.state.add('StartMenu', N8.StartMenu);
-	// game.state.add('Game', N8.Game);
+	game.state.add('Game', N8.Game);
 
 	//	Now start the Boot state.
 	game.state.start('Boot');

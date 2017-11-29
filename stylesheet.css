@@ -1,0 +1,101 @@
+/*Resume syles below this point */
+
+html, body, .bodyOne {
+  overflow: hidden;
+  border: solid;
+  border-color: black;
+  background-color: rgba(82, 86, 89, 1);
+  height: 100%;
+  min-height: 100%;
+}
+
+.resume {
+  width: 100%;
+  height: 80%
+}
+
+.portal{
+  position: relative;
+  height: 20%;
+  background-color: rgba(82, 86, 89, 1);
+}
+
+.bluePortal{
+  height: 100%;
+  width: 100%
+}
+
+.centerText{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-decoration:none;
+   font-family: 'Orbitron', sans-serif;
+   font-size: 18px;
+   color: black;
+}
+
+
+
+.bluePortal:hover{
+  filter: brightness(150%);
+}
+
+
+/* portfolio styles */
+
+HTML, body, .bodyTwo{
+     overflow: visible;
+    background-color: rgba(82, 86, 89, 1);
+}
+
+HTML{
+background-color: rgba(82, 86, 89, 1);
+}
+
+.purplePortal{
+  height: 100%;
+  width: 100%
+}
+
+.centerText{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-decoration:none;
+   font-family: 'Orbitron', sans-serif;
+   font-size: 18px;
+   color: black;
+}
+
+
+.purplePortal:hover{
+  filter: brightness(150%);
+}
+
+.card-deck{
+  padding: 40px;
+  font-family: 'Lora', serif;
+  background-color: rgba(82, 86, 89, 1);
+}
+
+.card:hover{
+    cursor: default;
+    transform: rotate(10deg);
+    transition: all .6s ease-in-out 0s;
+}
+
+.card-body{
+  border: inset 5px;
+  border-radius: 5px;
+  border-color: black;
+}
+
+.containerTwo{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+}
