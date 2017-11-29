@@ -12,6 +12,7 @@ N8.Game = function(game){
   this.bossHealth = 500;
   this.bossLives = 3;
   this.sign;
+  this.deathRefresh;
   this.mute;
   this.unmute;
   this.signLeft;
@@ -31,6 +32,7 @@ N8.Game.prototype = {
 
 
 
+
     },
 
     buildWorld: function(game){
@@ -44,6 +46,8 @@ N8.Game.prototype = {
       this.board.width = game.width;
 
 
+
+
       //music
       this.teleport = this.add.audio('teleport');
       this.winner = this.add.audio('winner');
@@ -53,6 +57,7 @@ N8.Game.prototype = {
       this.mute = this.add.image(this.world.centerX + 615, this.world.top, 'mute')
       this.mute.inputEnabled = true;
       this.mute.events.onInputDown.addOnce(this.provideSound, this);
+
 
 
       //seprate group for z-index & no collison
@@ -333,12 +338,24 @@ N8.Game.prototype = {
       this.unmute.events.onInputDown.addOnce(this.silence, this);
     },
 
-    silence: function(game){;
+    silence: function(game){
       this.themeSong.pause();
       this.mute = this.add.image(this.world.centerX + 615, this.world.top, 'mute')
       this.mute.inputEnabled = true;
       this.mute.events.onInputDown.addOnce(this.provideSound, this);
 
+    },
+
+    deathRefreshF: function(game){
+      if(this.ninjaHealth == 0  || this.ninjaHealth < 0){
+        this.deathRefresh = this.add.image(this.world.centerX -100, this.world.top + 100, 'refresh');
+        this.deathRefresh.inputEnabled = true;
+        this.deathRefresh.events.onInputDown.addOnce(this.reload, this);
+       }
+    },
+
+    reload: function(game){
+      window.location.href = "index.html";
     },
 
 
@@ -383,6 +400,7 @@ N8.Game.prototype = {
   update: function(game){
 
 
+    this.deathRefreshF(game);
     this.ready = true;
 
     //collision
@@ -481,11 +499,13 @@ this.healthText.setText("Health: " + this.ninjaHealth);
 console.log(this.ninjaHealth)
 console.log(this.healthText)
         //Gameover
-        if(this.ninjaHealth == 0){
+        if(this.ninjaHealth == 0  || this.ninjaHealth < 0){
             this.ninja.kill();
             this.deathText = this.add.text(this.world.centerX -250, this.world.centerY -80, "You're courageous, but lacking skill!", { font: "24px Orbitron", fill: "red", align: "center" });
          }
 }
+
+
 
 function killBoss(health){
   if(this.bossHealth == 0  && this.bossLives == 3){
@@ -536,7 +556,7 @@ function bossLivesCounter(boss){
 }
 
 function portTele(tele){
-  if(this.ninja.body.x = this.port.y){
+  if(this.ninja.body.x = this.port.y -1000){
   this.teleport.play()
     // open in a new window instead (this will likely be blocked by popup blockers though)
    // window.open("http://127.0.0.1:8080/portfolio");
@@ -546,12 +566,11 @@ function portTele(tele){
 }
 
 function resumeTele(teleport){
-  if(this.ninja.body.x = this.resume.y){
+  if(this.ninja.body.x = this.resume.y -2000){
   this.teleport.play()
   // open in a new window instead (this will likely be blocked by popup blockers though)
   // window.open("http://127.0.0.1:8080/resume");
   // open in the same window (like clicking a link)
-    window.
-  location.href = "resume.html"
+    window.location.href = "resume.html"
 }
 }

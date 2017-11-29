@@ -21,6 +21,7 @@ N8.Preloader.prototype = {
 		this.preloadBar.anchor.setTo(0.5, 0.5);
 		this.load.setPreloadSprite(this.preloadBar);
 		this.titleText = this.add.sprite(this.world.centerX, this.world.centerY, 'titleimage');
+		this.titleText.scale.setTo(.4, .4)
 		this.titleText.anchor.setTo(0.5, 0.5);
 		this.load.image('mountain', 'background/NinjaMountain.jpg');
 
@@ -37,6 +38,7 @@ N8.Preloader.prototype = {
 		this.load.image('purpleStar', 'background/purpleStar.png')
 		this.load.image('glow', 'background/glowForm.png')
 		this.load.image('container', 'background/container.png')
+		this.load.image('refresh', 'background/refresh.png')
 
 		//audio
 		this.load.audio('themeSong', 'soundeffects/TheLastEncounter.mp3');
@@ -62,7 +64,8 @@ N8.Preloader.prototype = {
 
 	create: function (game) {
 		this.preloadBar.cropEnabled = false;
-			this.state.start('StartMenu')
+			this.state.start('StartMenu');
+
 
 
 

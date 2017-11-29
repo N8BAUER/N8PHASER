@@ -27,15 +27,13 @@ N8.StartMenu.prototype = {
 			startBG.width = game.width;
 
 
-			this.startPrompt = this.add.text(this.world.centerX-500, this.world.top +80,
+			this.startPrompt = this.add.text(this.world.centerX-390, this.world.top +80,
 			'Click start to enter my domain!', {
-			font: 'Orbitron',
-			fontSize: 80,
+			fontSize: 60,
 			fill: "white"})
 
 			//ctrls
 			this.ctrls = this.add.text(this.world.centerX -175, this.world.top + 600, 'Controls', {
-				font: 'Orbitron',
 				fontSize: 80,
 				fill: "white"
 			});

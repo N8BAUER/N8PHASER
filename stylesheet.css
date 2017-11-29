@@ -81,9 +81,15 @@ background-color: rgba(82, 86, 89, 1);
   background-color: rgba(82, 86, 89, 1);
 }
 
-.card:hover{
+.card.left:hover{
     cursor: default;
-    transform: rotate(10deg);
+    transform: rotate(-5deg);
+    transition: all .6s ease-in-out 0s;
+}
+
+.card.right:hover{
+    cursor: default;
+    transform: rotate(5deg);
     transition: all .6s ease-in-out 0s;
 }
 
@@ -96,6 +102,21 @@ background-color: rgba(82, 86, 89, 1);
 .containerTwo{
   display: flex;
   flex-direction:row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+}
+
+li {
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+li:hover{
+  background-color: green;
+  color: white;
+  text-decoration: none;
+}
+
+.jumbotron {
+  background: linear-gradient(white, rgba(82, 86, 89, 1));
 }
