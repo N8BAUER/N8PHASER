@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
     <style>
         body {
             margin: 0;
@@ -19,16 +20,25 @@
     </style>
 </head>
 <body>
-	<div id="gameContainer"></div>
 
 
 <script type="text/javascript">
+
+var TheGame = {
+
+};
+
+TheGame.Params = {
+	baseWidth: 1920,
+	baseHeight: 1080,
+	iconSize: 364
+};
 
 
 window.onload = function() {
 
 	//	100% of window - see Boot.js for additional configuration
-	var game = new Phaser.Game('100%', '100%', Phaser.AUTO, 'gameContainer');
+	var game = new Phaser.Game(TheGame.Params.baseWidth, TheGame.Params.height, Phaser.AUTO);
 
 
 
@@ -41,6 +51,10 @@ window.onload = function() {
 
 	//	Now start the Boot state.
 	game.state.start('Boot');
+
+
+
+
 
 
 };

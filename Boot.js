@@ -16,9 +16,8 @@ N8.Boot.prototype = {
         this.stage.disableVisibilityChange = false;
 
         //  This tells the game to resize the renderer to match the game dimensions (i.e. 100% browser width / height)
-        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.scale.pageAlignHorizontally = true;
-        this.scale.pageAlignVertically = true;
+        this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+
 
 
 
@@ -27,6 +26,10 @@ N8.Boot.prototype = {
 
         this.input.addPointer();
         this.stage.backgroundColor = "rgba(56, 55, 62, 0.82)";
+        this.stage.height = this.height;
+        this.stage.width = this.width;
+
+
 
     },
 
@@ -39,6 +42,8 @@ N8.Boot.prototype = {
         this.load.image('arrowRight', 'background/arrowRight.png');
         this.load.image('arrowUp', 'background/arrowUp.png');
         this.load.image('buttonStart', 'background/buttonStart.png')
+
+
     },
 
 
@@ -50,7 +55,7 @@ N8.Boot.prototype = {
     },
 
     preloadIt: function(game){
-        this.time.events.add(Phaser.Timer.SECOND * 4,this.state.start('Preloader'));
+        this.state.start('Preloader');
     }
 
 };

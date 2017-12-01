@@ -120,3 +120,10 @@ li:hover{
 .jumbotron {
   background: linear-gradient(white, rgba(82, 86, 89, 1));
 }
+
+@media screen and (max-width: 680px) {
+    .containerTwo {
+        display: flex;
+        flex-direction: column;
+    }
+}
