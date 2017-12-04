@@ -39,6 +39,14 @@ N8.StartMenu.prototype = {
 			this.startPrompt.scale.setTo(this.scaleRatio, this.scaleRatio);
 			// this.scaleSprite(this.startPrompt, this.width, this.height / 3, 50, 1);
 
+			this.warning = this.add.text(this.world.centerX - this.world.width /70, this.world.centerY - this.game.height/9,
+			'Landscape must be used for mobile while in game 😬!', {
+			font: "Orbitron",
+			fontSize: 39,
+			fill: "rgba(255, 255, 255, 1)"})
+			this.warning.anchor.setTo(.5);
+			this.warning.scale.setTo(this.scaleRatio, this.scaleRatio);
+
 
 
 			this.down = this.add.image(this.world.centerX + TheGame.Params.iconSize /2 , this.world.centerY +this.game.height/7, 'arrowDown')
@@ -121,6 +129,11 @@ resize: function (width, height) {
 		this.scaleSprite(this.startPrompt, width, height / 3, 50, .85);
 		this.startPrompt.x = this.world.centerX;
 		this.startPrompt.y = this.world.centerY - height / 3;
+
+		this.scaleSprite(this.warning, width, height / 3, 50, .85);
+		this.warning.x = this.world.centerX - this.world.width /70;
+		this.warning.y = this.world.centerY - this.game.height/9;
+
 
 		this.scaleSprite(this.down, width, height / 3, 50, .5);
 		this.down.x = this.world.centerX - this.down.width / 20;

@@ -20,11 +20,11 @@ N8.Game = function(game){
   this.themeSong;
   this.teleport;
   this.winner;
-  this.left = false;
-  this.right = false;
-  this.down = false;
-  this.up = false;
-  this.ready = false;
+  this.left;
+  this.right;
+  this.down;
+  this.up;
+
 };
 
 N8.Game.prototype = {
@@ -34,6 +34,8 @@ N8.Game.prototype = {
     this.board
     this.buildWorld(game);
     this.addSprites(game);
+    this.mobile(game);
+
 
 
 
@@ -45,7 +47,8 @@ N8.Game.prototype = {
 
     buildWorld: function(game){
 
-
+      console.log(screen.height)
+      console.log(screen.width)
 
       //main board features
       this.board = this.add.image(0, 0, 'mountain')
@@ -332,9 +335,13 @@ N8.Game.prototype = {
       //portals to portfolio & resume
       this.resume = this.portalGroup.create(this.world.centerX + this.game.height/3, this.world.centerY + this.game.height/ 3.4, 'blueStar');
       this.scaleSprite(this.resume, this.width, this.height / 3, 50, .2);
+      this.resume.inputEnabled = true;
+      this.resume.events.onInputDown.addOnce(this.visitResume, this)
 
       this.port = this.portalGroup.create(this.world.centerX - this.game.height/1.4, this.world.centerY + this.game.height/ 4, 'purpleStar');
       this.scaleSprite(this.port, this.width, this.height / 3, 50, .5);
+      this.port.inputEnabled = true;
+      this.port.events.onInputDown.addOnce(this.visitPort, this);
 
       this.resume.enableBody = true;
       this.port.enableBody = true;
@@ -445,9 +452,40 @@ N8.Game.prototype = {
       this.container.body.immovable = true;
       this.container2.body.immovable = true;
 
-
+      this.left = this.add.image(this.world.centerX + this.game.height/12, this.world.centerY + this.game.height/ 5, "arrowLeft");
+      this.scaleSprite(this.left, this.width, this.height / 3, 50, .3);
+      this.left.inputEnabled = true;
+      this.left.events.onInputDown.add(this.moveLeft, this);
+      this.left.kill();
+      this.right = this.add.image(this.world.centerX + this.game.height/6.4, this.world.centerY + this.game.height/ 5, "arrowRight");
+      this.scaleSprite(this.right, this.width, this.height / 3, 50, .3);
+      this.right.inputEnabled = true;
+      this.right.events.onInputDown.add(this.moveRight, this);
+      this.right.kill();
+      this.up  = this.add.image(this.world.centerX + this.game.height/8.5, this.world.centerY + this.game.height/ 6, "arrowUp")
+      this.scaleSprite(this.up, this.width, this.height / 3, 50, .3);
+      this.up.inputEnabled = true;
+      this.up.events.onInputDown.add(this.jump, this);
+      this.up.kill();
+      this.down = this.add.image(this.world.centerX + this.game.height/8.5, this.world.centerY + this.game.height/ 4.3, "arrowDown")
+      this.scaleSprite(this.down, this.width, this.height / 3, 50, .3);
+      this.down.kill();
+      this.down.inputEnabled = true;
+      this.down.events.onInputDown.add(this.stop, this);
 
       this.cursors = this.input.keyboard.createCursorKeys();
+
+    },
+
+    visitPort: function(game){
+
+       window.location.href = "portfolio.html"
+
+    },
+
+    visitResume: function(game){
+
+       window.location.href = "resume.html"
 
     },
 
@@ -496,6 +534,8 @@ N8.Game.prototype = {
       this.ninja.body.collideWorldBounds = true;
       this.ninja.animations.add('right', [0, 1, 2], 5, true);
       this.ninja.animations.add('left', [2, 1, 2], 5, true);
+      this.ninja.animations.add('rightMobile', [0, 1, 2], 30, true);
+      this.ninja.animations.add('leftMobile', [2, 1, 2], 30, true);
 
       // //ninja death future implementation
       // this.deadNinja = this.add.sprite(this.world.centerX + 115, this.world.bottom -300, 'ninjaRun')
@@ -522,6 +562,82 @@ N8.Game.prototype = {
 
     },
 
+  viewport: function(){
+var e = window, a = 'inner';
+if ( !( 'innerWidth' in window ) )
+{
+a = 'client';
+e = document.documentElement || document.body;
+}
+return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
+},
+
+      mobile: function(game){
+
+        if (this.viewport(game).width <= 640 && this.viewport(game).height <= 960){
+          console.log("mobile")
+
+
+//    buttonleft = game.add.button(0, 472, 'buttonhorizontal', null, this, 0, 1, 0, 1);
+      this.left.reset(this.world.centerX + this.game.height/12, this.world.centerY + this.game.height/ 5, "arrowLeft");
+
+      this.right.reset(this.world.centerX + this.game.height/6.4, this.world.centerY + this.game.height/ 5, "arrowRight");
+
+      this.up.reset(this.world.centerX + this.game.height/8.5, this.world.centerY + this.game.height/ 6, "arrowUp");
+
+      this.down.reset(this.world.centerX + this.game.height/8.5, this.world.centerY + this.game.height/ 4.3, "arrowDown");
+
+
+
+        }
+        else if (!this.viewport(game).width <= 640 && !this.viewport(game).height <= 960){
+          this.left.kill();
+          this.right.kill();
+          this.down.kill();
+          this.up.kill();
+        }
+      },
+
+
+moveLeft: function(game){
+  console.log("left")
+
+          //  Move to the left
+          this.ninja.body.velocity.x = -1200;
+
+
+          this.ninja.animations.play('leftMobile');
+          this.ninja.scale.setTo(-1, 1);
+    },
+moveRight: function(game){
+
+          //  Move to the right
+          this.ninja.body.velocity.x = 1200;
+
+          this.ninja.animations.play('rightMobile');
+          this.ninja.scale.setTo(1, 1);
+
+    },
+stop: function(game){
+
+        this.ninja.body.velocity.x = 0;
+
+          //  Stand still
+          this.ninja.animations.stop();
+
+          this.ninja.frame = 0;
+    },
+
+jump: function(game){
+      //  Allow the player to jump if they are touching the ground.
+
+          this.ninja.body.velocity.y = -259;
+
+
+
+    },
+
+
 
     scaleSprite: function (sprite, availableSpaceWidth, availableSpaceHeight, padding, scaleMultiplier) {
       var scale = this.getSpriteScale(sprite._frame.width, sprite._frame.height, availableSpaceWidth, availableSpaceHeight, padding);
@@ -541,8 +657,6 @@ N8.Game.prototype = {
     },
 
   resize: function (width, height) {
-
-      console.log("resize happened")
 
       this.board.height = height;
       this.board.width = width;
@@ -867,11 +981,14 @@ N8.Game.prototype = {
 
 
 
-  update: function(game){
 
+  update: function(game){
 
     this.deathRefreshF(game);
     this.ready = true;
+
+
+
 
     //collision
     this.hitObjects = this.physics.arcade.collide(this.ninja, this.platformGroup)
@@ -940,6 +1057,7 @@ N8.Game.prototype = {
     {
         this.ninja.body.velocity.y = -299;
     }
+
 
   },
 
@@ -1029,6 +1147,7 @@ function bossLivesCounter(boss){
 function portTele(tele){
   if(this.ninja.body.x = this.port.x){
   this.teleport.play()
+  this.ninja.kill()
     // open in a new window instead (this will likely be blocked by popup blockers though)
    // window.open("http://127.0.0.1:8080/portfolio");
    // open in the same window (like clicking a link)
@@ -1037,8 +1156,9 @@ function portTele(tele){
 }
 
 function resumeTele(teleport){
-  if(this.ninja.body.x = this.resume.y -2000){
+  if(this.ninja.body.x = this.resume.y){
   this.teleport.play()
+  this.ninja.kill()
   // open in a new window instead (this will likely be blocked by popup blockers though)
   // window.open("http://127.0.0.1:8080/resume");
   // open in the same window (like clicking a link)

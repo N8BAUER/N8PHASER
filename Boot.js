@@ -17,6 +17,8 @@ N8.Boot.prototype = {
 
         //  This tells the game to resize the renderer to match the game dimensions (i.e. 100% browser width / height)
         this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+        // this.scale.pageAlignHorizontally = true;
+        // this.scale.pageAlignVertically = true;
 
 
 
