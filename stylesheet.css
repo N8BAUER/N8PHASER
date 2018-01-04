@@ -45,14 +45,11 @@ html, body, .bodyOne {
 
 /* portfolio styles */
 
-HTML, body, .bodyTwo{
+HTML, body{
      overflow: visible;
-    background-color: rgba(82, 86, 89, 1);
+    background-color: white;
 }
 
-HTML{
-background-color: rgba(82, 86, 89, 1);
-}
 
 .purplePortal{
   height: 100%;
@@ -117,8 +114,24 @@ li:hover{
   text-decoration: none;
 }
 
+div.portal{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 .jumbotron {
-  background: linear-gradient(white, rgba(82, 86, 89, 1));
+  background: linear-gradient(rgba(82, 86, 89, 1), white);
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+ul.list-group{
+  text-align: center;
+  text-decoration: none;
+}
+
+p.lead{
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 680px) {
