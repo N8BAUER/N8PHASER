@@ -4,30 +4,40 @@ html, body, .bodyOne {
   overflow: hidden;
   border: solid;
   border-color: black;
-  background-color: rgba(82, 86, 89, 1);
-  height: 100%;
-  min-height: 100%;
+  border-bottom: black !important;
+
+
 }
+
+.bodyOne{
+  overflow: hidden !important;
+}
+
+
 
 .resume {
   width: 100%;
-  height: 80%
+  height: 1000px;
+  overflow: hidden !important;
 }
 
 .portal{
   position: relative;
   height: 20%;
-  background-color: rgba(82, 86, 89, 1);
+
 }
+
+
 
 .bluePortal{
-  height: 100%;
-  width: 100%
+  height: 100px;
+  width: 100%;
+
 }
 
-.centerText{
+.centerTextResume{
   position: absolute;
-   top: 50%;
+   top: 3.2%;
    left: 50%;
    transform: translate(-50%, -50%);
    text-decoration:none;
@@ -43,17 +53,21 @@ html, body, .bodyOne {
 }
 
 
+
+
 /* portfolio styles */
 
 HTML, body{
      overflow: visible;
-    background-color: white;
+
 }
 
 
 .purplePortal{
-  height: 100%;
+
+  height: 100px;
   width: 100%
+
 }
 
 .centerText{
@@ -62,7 +76,7 @@ HTML, body{
    left: 50%;
    transform: translate(-50%, -50%);
    text-decoration:none;
-   font-family: 'Orbitron', sans-serif;
+   font-family: 'Orbitron', sans-serif !important;
    font-size: 18px;
    color: black;
 }
@@ -76,24 +90,29 @@ HTML, body{
   padding: 40px;
   font-family: 'Lora', serif;
   background-color: rgba(82, 86, 89, 1);
+  font-family: 'Orbitron', sans-serif !important;
+
 }
 
 .card.left:hover{
     cursor: default;
     transform: rotate(-5deg);
     transition: all .6s ease-in-out 0s;
+    mix-blend-mode:hard-light !important;
 }
 
 .card.right:hover{
     cursor: default;
     transform: rotate(5deg);
     transition: all .6s ease-in-out 0s;
+    mix-blend-mode:hard-light !important;
 }
 
 .card-body{
   border: inset 5px;
   border-radius: 5px;
   border-color: black;
+  font-family: 'Orbitron', sans-serif !important;
 }
 
 .containerTwo{
@@ -101,6 +120,7 @@ HTML, body{
   flex-direction:row;
   align-items: center;
   justify-content: center;
+  font-family: 'Orbitron', sans-serif !important;
 }
 
 li {
@@ -115,6 +135,19 @@ li:hover{
 }
 
 div.portal{
+    background-color: rgba(82, 86, 89, 1) !important;
+  border-color: black;
+  border-bottom: black !important;
+
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+div.portalBlue{
+    background-color: rgba(64, 64, 64) !important;
+  border-color: black;
+  border-bottom: black !important;
+
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -130,13 +163,58 @@ ul.list-group{
   text-decoration: none;
 }
 
+li.list-group-item{
+  height: 83px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 28px;
+  line-height: 55px !important;
+}
+
 p.lead{
   padding-top: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  color: black;
 }
+
+.fancy{
+  background:url("./background/mysteryDev.png") no-repeat center hsl(282,50%,50%);
+  background-size: cover;
+  border: 5px solid #000;
+ border-radius: 50%;
+display: inline-block;
+ width: 31rem; height: 30rem;
+
+
+}
+
+.fancy:hover{
+  background:url("./background/nateln.jpg") no-repeat center hsl(0,0%,50%);;
+  background-blend-mode:luminosity;
+   border-radius: 50%;
+   background-size: cover;
+   border: 5px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  width: 31rem; height: 30rem;
+
+}
+
 
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.bodyTwo{
+  font-family: 'Orbitron', sans-serif !important;
+}
+
+html, body, .bodyOne .portalBlue{
+  overflow-y:hidden !important;
+  height: 100vh !important;
 }
 
 
