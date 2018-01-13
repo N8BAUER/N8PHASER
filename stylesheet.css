@@ -32,6 +32,7 @@ html, body, .bodyOne {
 .bluePortal{
   height: 100px;
   width: 100%;
+    background-color: rgba(64, 64, 64, 1) !important;
 
 }
 
@@ -89,7 +90,7 @@ HTML, body{
 .card-deck{
   padding: 40px;
   font-family: 'Lora', serif;
-  background-color: rgba(82, 86, 89, 1);
+  background-color: rgba(64, 64, 64, 1);
   font-family: 'Orbitron', sans-serif !important;
 
 }
@@ -135,7 +136,7 @@ li:hover{
 }
 
 div.portal{
-    background-color: rgba(82, 86, 89, 1) !important;
+    background-color: rgba(64, 64, 64, 1) !important;
   border-color: black;
   border-bottom: black !important;
 
@@ -144,7 +145,7 @@ div.portal{
 }
 
 div.portalBlue{
-    background-color: rgba(64, 64, 64) !important;
+    background-color: rgba(64, 64, 64, 1) !important;
   border-color: black;
   border-bottom: black !important;
 
@@ -153,7 +154,7 @@ div.portalBlue{
 }
 
 .jumbotron {
-  background: linear-gradient(rgba(82, 86, 89, 1), white);
+  background: linear-gradient(rgba(64, 64, 64, 1), white);
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -212,9 +213,9 @@ html, body {
   font-family: 'Orbitron', sans-serif !important;
 }
 
-html, body, .bodyOne .portalBlue{
+.bodyOne .portalBlue{
   overflow-y:hidden !important;
-  height: 100vh !important;
+
 }
 
 
