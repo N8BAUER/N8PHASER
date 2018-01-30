@@ -3,3 +3,4 @@ sendgrid.env
 sendgrid.env
 sendgridE.env
 node_modules
+npm-debug.log
