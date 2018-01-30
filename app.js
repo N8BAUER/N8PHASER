@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var dotenv =require('dotenv')config()
 const PORT = process.env.PORT || 8080;
 
 const routes = require('./routes/index');
