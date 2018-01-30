@@ -11,6 +11,7 @@ html, body, .bodyOne {
 
 .bodyOne{
   overflow: hidden !important;
+
 }
 
 
@@ -32,26 +33,23 @@ html, body, .bodyOne {
 .bluePortal{
   height: 100px;
   width: 100%;
-    background-color: rgba(64, 64, 64, 1) !important;
-
+  background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url("./background/blueportal.jpeg") no-repeat center center fixed !important;
 }
 
 .centerTextResume{
   position: absolute;
-   top: 3.2%;
+   top: 131%;
    left: 50%;
    transform: translate(-50%, -50%);
    text-decoration:none;
    font-family: 'Orbitron', sans-serif;
    font-size: 18px;
-   color: black;
+   color: white;
 }
 
 
 
-.bluePortal:hover{
-  filter: brightness(150%);
-}
+
 
 
 
@@ -65,9 +63,11 @@ HTML, body{
 
 
 .purplePortal{
-
-  height: 100px;
-  width: 100%
+  background:linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),url("./background/purpleportalbg3.jpeg") no-repeat center center fixed;
+  background-size: 161% 100%;
+  color: white !important;
+  height: 150px;
+  width: 100%;
 
 }
 
@@ -90,21 +90,21 @@ HTML, body{
 .card-deck{
   padding: 40px;
   font-family: 'Lora', serif;
-  background-color: rgba(64, 64, 64, 1);
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),url("./background/purplebg.jpeg") no-repeat center fixed;
+  background-size: cover;
   font-family: 'Orbitron', sans-serif !important;
+
 
 }
 
 .card.left:hover{
     cursor: default;
-    transform: rotate(-5deg);
     transition: all .6s ease-in-out 0s;
-    mix-blend-mode:hard-light !important;
+    mix-blend-mode:screen !important;
 }
 
 .card.right:hover{
     cursor: default;
-    transform: rotate(5deg);
     transition: all .6s ease-in-out 0s;
     mix-blend-mode:hard-light !important;
 }
@@ -130,31 +130,32 @@ li {
 }
 
 li:hover{
-  background-color: green;
+  background-color: rgba(0,0,0,.1);
   color: white;
   text-decoration: none;
 }
 
 div.portal{
-    background-color: rgba(64, 64, 64, 1) !important;
-  border-color: black;
-  border-bottom: black !important;
-
   margin-left: -15px;
   margin-right: -15px;
 }
 
 div.portalBlue{
-    background-color: rgba(64, 64, 64, 1) !important;
+  background: url("./background/blueportalbg.jpeg") no-repeat center!important;
+  background-size: cover !important;
   border-color: black;
   border-bottom: black !important;
-
   margin-left: -15px;
   margin-right: -15px;
 }
 
+div.portalBlue:hover{
+    filter: brightness(150%);
+}
+
 .jumbotron {
-  background: linear-gradient(rgba(64, 64, 64, 1), white);
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./background/purplebg.jpeg") no-repeat center fixed ;
+  background-size: cover;
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -176,7 +177,47 @@ p.lead{
   padding-top: 20px;
   font-family: 'Orbitron', sans-serif;
   font-size: 22px;
-  color: black;
+  color: white;
+  font-weight: bolder;
+  background-color: black;
+  opacity: .8;
+}
+
+div.card-body{
+  color: white;
+  font-weight: bolder;
+  background-color: rgb(0, 0, 0);
+  opacity: .8;
+  border-color: white;
+  border-style: 15px groove;
+}
+
+
+label{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: bolder;
+  background-color: black;
+  opacity: .8;
+  padding: 5px;
+}
+
+h1.display-5{
+  font-size: 22px;
+  color: white;
+  font-weight: bolder;
+  background-color: black;
+  opacity: .9;
+}
+
+.form-group1{
+  padding-bottom: 15px;
+}
+
+div.centerText{
+  color:white;
+    font-weight: bolder;
 }
 
 .fancy{
@@ -210,12 +251,25 @@ html, body {
 }
 
 .bodyTwo{
+  background:linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./background/purplebg.jpeg") no-repeat center fixed;
+  background-size: cover;
   font-family: 'Orbitron', sans-serif !important;
 }
+
 
 .bodyOne .portalBlue{
   overflow-y:hidden !important;
 
+}
+
+.btn{
+  padding: 20px !important;
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+}
+
+.form-group1{
+  margin-top: 30px !important;
 }
 
 
