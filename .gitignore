@@ -1,6 +1,3 @@
-sendgrid.env
-sendgrid.env
-sendgrid.env
-sendgridE.env
+.env
 node_modules
 npm-debug.log
