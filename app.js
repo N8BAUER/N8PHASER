@@ -4,13 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser');
-var dotenv =require('dotenv').config()
-
-
-const routes = require('./routes/index');
-const api = require('./routes/api');
-
-const app = express()
+var dotenv =require('dotenv').config();
+var cors = require('cors');
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,7 +19,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'Public')));
+app.use(cors({origin: (domain, callback) => {
+  callback(null, true);
+}}));
 
+const routes = require('./routes/index');
+const api = require('./routes/api');
 
 
 app.use('/', routes)
@@ -46,11 +47,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-
-
-
 
 
 
