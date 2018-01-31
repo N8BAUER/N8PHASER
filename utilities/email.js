@@ -26,10 +26,7 @@ module.exports = {
         }
 
         resolve(response)
-
+      })
     })
-
-  })
-
-}
+  }
 }

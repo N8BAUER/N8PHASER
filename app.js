@@ -10,6 +10,9 @@ var dotenv =require('dotenv').config()
 const PORT = process.env.PORT || 8080;
 const environment = process.env.NODE_ENV || "development";
 
+const routes = require('./routes/index');
+const api = require('./routes/api');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -24,8 +27,7 @@ app.use(cors({origin: (domain, callback) => {
   callback(null, true);
 }}));
 
-const routes = require('./routes/index');
-const api = require('./routes/api');
+
 
 app.use("/", routes)
 app.use("/api", api)
