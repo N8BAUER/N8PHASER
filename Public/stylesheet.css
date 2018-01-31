@@ -211,6 +211,15 @@ h1.display-5{
   opacity: .9;
 }
 
+h1.display-6{
+  font-size: 22px;
+  color: white;
+  font-weight: bolder;
+  background-color: black;
+  opacity: .9;
+  height: 30px;
+}
+
 .form-group1{
   padding-bottom: 15px;
 }

@@ -7,7 +7,7 @@ router.post("/:action", function(req, res, next) {
 
   if (action == "send") {
     //send an email
-    utility.email
+    utilities.email
     .sendemail(req.body)
     .then(function(response){
         res.json({
