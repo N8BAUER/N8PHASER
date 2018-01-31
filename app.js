@@ -13,8 +13,8 @@ const routes = require('./routes/index');
 const api = require('./routes/api');
 
 // view engine setup
-// app.set('views', path.join(__dirname, '/Public'));
-// app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 
 
