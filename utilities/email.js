@@ -33,8 +33,3 @@ module.exports = {
 
 }
 }
-
-
-
-
-module.exports = router;
