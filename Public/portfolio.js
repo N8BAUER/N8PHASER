@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-  const emailAPI= "https://n8-email.herokuapp.com/api/send"
+  const emailAPI= "/api/send"
   console.log("jQuery working!")
 
   $('body').on('submit', '#emailForm', function(e){
