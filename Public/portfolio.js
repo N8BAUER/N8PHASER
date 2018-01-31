@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   $('body').on('submit', '#emailForm', function(e){
   e.preventDefault();
-  $.post(emailAPI, $('#emailForm').serialize())
+  $.post('/api/send/', $('#emailForm').serialize())
   .then(function(response) {
   $(".btn").fadeOut(700)
   $(".display-6").fadeIn(2000)
