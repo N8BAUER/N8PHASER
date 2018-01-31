@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var dotenv =require('dotenv').config()
-const PORT = process.env.PORT || 8080;
+
 
 const routes = require('./routes/index');
 const api = require('./routes/api');
@@ -54,6 +54,6 @@ app.use(function(err, req, res, next) {
 
 
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`))
+
 
 module.exports = app;
