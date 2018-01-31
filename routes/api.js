@@ -1,13 +1,13 @@
 var express = require("express");
 var router = express.Router();
-var utility = require('../utilities')
+var utilities = require('../utilities')
 
 router.post("/:action", function(req, res, next) {
   var action = req.params.action;
 
   if (action == "send") {
     //send an email
-    utility.email
+    utilities.email
     .sendemail(req.body)
     .then(function(response){
         res.json({

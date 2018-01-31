@@ -6,7 +6,7 @@ module.exports = {
   sendemail: function(emailInfo){
 
     return new Promise(function(resolve, reject ){
-      var from_email = new helper.Email(emailInfo.email);
+      var from_email = new helper.Email(emailInfo.sender);
       var to_email = new helper.Email("n8bdoesemailvia@gmail.com");
       var subject = emailInfo.subject;
       var content = new helper.Content("text/html", emailInfo.message);
@@ -16,7 +16,7 @@ module.exports = {
       var request = sg.emptyRequest({
         method: "POST",
         path: "/v3/mail/send",
-        body: mail.toJSON()
+        body: mail.toJSON(),
       });
 
       sg.API(request, function(error, response) {
