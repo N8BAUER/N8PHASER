@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var utility = require('../utility')
+var utility = require('../utilities')
 
 router.post("/:action", function(req, res, next) {
   var action = req.params.action;
