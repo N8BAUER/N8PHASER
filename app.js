@@ -1,16 +1,16 @@
 const express = require("express");
-const app = express()
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser');
-var cors = require('cors');
 var dotenv =require('dotenv').config()
 
 
 const routes = require('./routes/index');
 const api = require('./routes/api');
+
+const app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,9 +22,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'Public')));
-app.use(cors({origin: (domain, callback) => {
-  callback(null, true);
-}}));
 
 
 
