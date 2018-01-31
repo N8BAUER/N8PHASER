@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var dotenv =require('dotenv').config()
 const PORT = process.env.PORT || 8080;
-
+const environment = process.env.NODE_ENV || "development";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
