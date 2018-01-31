@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var utility = require('../Utility')
+var utility = require('../utility')
 // var helper = require("sendgrid").mail;
 
 router.post("/:action", function(req, res, next) {
