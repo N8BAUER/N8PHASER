@@ -30,3 +30,5 @@ router.post("/:action", function(req, res, next) {
     message: "Invalid Action"
   });
 });
+
+module.exports = router;
