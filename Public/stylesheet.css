@@ -5,16 +5,11 @@ html, body, .bodyOne {
   border: solid;
   border-color: black;
   border-bottom: black !important;
-
-
 }
 
-.bodyOne{
+.bodyOne {
   overflow: hidden !important;
-
 }
-
-
 
 .resume {
   width: 100%;
@@ -22,103 +17,87 @@ html, body, .bodyOne {
   overflow: hidden !important;
 }
 
-.portal{
+.portal {
   position: relative;
   height: 20%;
-
 }
 
-
-
-.bluePortal{
+.bluePortal {
   height: 100px;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url("./background/blueportal.jpeg") no-repeat center center fixed !important;
 }
 
-.centerTextResume{
+.centerTextResume {
   position: absolute;
-   top: 131%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   text-decoration:none;
-   font-family: 'Orbitron', sans-serif;
-   font-size: 18px;
-   color: white;
+  top: 131%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: white;
 }
-
-
-
-
-
-
-
 
 /* portfolio styles */
 
-HTML, body{
-     overflow: visible;
-
+HTML, body {
+  overflow: visible;
 }
 
-
-.purplePortal{
-  background:linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),url("./background/purpleportalbg3.jpeg") no-repeat center center fixed;
+.purplePortal {
+  background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url("./background/purpleportalbg3.jpeg") no-repeat center center fixed;
   background-size: 161% 100%;
   color: white !important;
   height: 150px;
   width: 100%;
-
 }
 
-.centerText{
+.centerText {
   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   text-decoration:none;
-   font-family: 'Orbitron', sans-serif !important;
-   font-size: 18px;
-   color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 18px;
+  color: black;
 }
 
-
-.purplePortal:hover{
+.purplePortal:hover {
   filter: brightness(150%);
 }
 
-.card-deck{
+.card-deck {
   padding: 40px;
   font-family: 'Lora', serif;
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),url("./background/purplebg.jpeg") no-repeat center fixed;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./background/purplebg.jpeg") no-repeat center fixed;
   background-size: cover;
   font-family: 'Orbitron', sans-serif !important;
-
-
 }
 
-.card.left:hover{
-    cursor: default;
-    transition: all .6s ease-in-out 0s;
-    mix-blend-mode:screen !important;
+.card.left:hover {
+  cursor: default;
+  transition: all .6s ease-in-out 0s;
+  mix-blend-mode: screen !important;
 }
 
-.card.right:hover{
-    cursor: default;
-    transition: all .6s ease-in-out 0s;
-    mix-blend-mode:hard-light !important;
+.card.right:hover {
+  cursor: default;
+  transition: all .6s ease-in-out 0s;
+  mix-blend-mode: hard-light !important;
 }
 
-.card-body{
+.card-body {
   border: inset 5px;
   border-radius: 5px;
   border-color: black;
   font-family: 'Orbitron', sans-serif !important;
 }
 
-.containerTwo{
+.containerTwo {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-family: 'Orbitron', sans-serif !important;
@@ -129,18 +108,18 @@ li {
   text-decoration: none;
 }
 
-li:hover{
-  background-color: rgba(0,0,0,.1);
+li:hover {
+  background-color: rgba(0, 0, 0, .1);
   color: white;
   text-decoration: none;
 }
 
-div.portal{
+div.portal {
   margin-left: -15px;
   margin-right: -15px;
 }
 
-div.portalBlue{
+div.portalBlue {
   background: url("./background/blueportalbg.jpeg") no-repeat center!important;
   background-size: cover !important;
   border-color: black;
@@ -149,23 +128,23 @@ div.portalBlue{
   margin-right: -15px;
 }
 
-div.portalBlue:hover{
-    filter: brightness(150%);
+div.portalBlue:hover {
+  filter: brightness(150%);
 }
 
 .jumbotron {
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./background/purplebg.jpeg") no-repeat center fixed ;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./background/purplebg.jpeg") no-repeat center fixed;
   background-size: cover;
   margin-left: -15px;
   margin-right: -15px;
 }
 
-ul.list-group{
+ul.list-group {
   text-align: center;
   text-decoration: none;
 }
 
-li.list-group-item{
+li.list-group-item {
   height: 83px;
   vertical-align: middle;
   text-align: center;
@@ -173,7 +152,7 @@ li.list-group-item{
   line-height: 55px !important;
 }
 
-p.lead{
+p.lead {
   padding-top: 20px;
   font-family: 'Orbitron', sans-serif;
   font-size: 22px;
@@ -183,7 +162,7 @@ p.lead{
   opacity: .8;
 }
 
-div.card-body{
+div.card-body {
   color: white;
   font-weight: bolder;
   background-color: rgb(0, 0, 0);
@@ -192,8 +171,7 @@ div.card-body{
   border-style: 15px groove;
 }
 
-
-label{
+label {
   font-family: 'Orbitron', sans-serif;
   font-size: 16px;
   color: white;
@@ -203,7 +181,7 @@ label{
   padding: 5px;
 }
 
-h1.display-5{
+h1.display-5 {
   font-size: 22px;
   color: white;
   font-weight: bolder;
@@ -211,7 +189,7 @@ h1.display-5{
   opacity: .9;
 }
 
-h1.display-6{
+h1.display-6 {
   font-size: 22px;
   color: white;
   font-weight: bolder;
@@ -220,71 +198,66 @@ h1.display-6{
   height: 30px;
 }
 
-.form-group1{
+.form-group1 {
   padding-bottom: 15px;
 }
 
-div.centerText{
-  color:white;
-    font-weight: bolder;
+div.centerText {
+  color: white;
+  font-weight: bolder;
 }
 
-.fancy{
-  background:url("./background/mysteryDev.png") no-repeat center hsl(282,50%,50%);
+#permaHover {
+  background: url("./background/mysteryDev.png") no-repeat center hsl(282, 50%, 50%);
   background-size: cover;
   border: 5px solid #000;
- border-radius: 50%;
-display: inline-block;
- width: 31rem; height: 30rem;
-
-
-}
-
-.fancy:hover{
-  background:url("./background/nateln.jpg") no-repeat center hsl(0,0%,50%);;
-  background-blend-mode:luminosity;
-   border-radius: 50%;
-   background-size: cover;
-   border: 5px solid #000;
   border-radius: 50%;
   display: inline-block;
-  width: 31rem; height: 30rem;
-
+  width: 31rem;
+  height: 30rem;
 }
 
+.fancy {
+  background: url("./background/nateln.jpg") no-repeat center hsl(0, 0%, 50%);
+  background-blend-mode: luminosity;
+  border-radius: 50%;
+  background-size: cover;
+  border: 5px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  width: 31rem;
+  height: 30rem;
+}
 
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    font-family: 'Orbitron', sans-serif !important;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Orbitron', sans-serif !important;
 }
 
-.bodyTwo{
-  background:linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./background/purplebg.jpeg") no-repeat center fixed;
+.bodyTwo {
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./background/purplebg.jpeg") no-repeat center fixed;
   background-size: cover;
   font-family: 'Orbitron', sans-serif !important;
 }
 
-
-.bodyOne .portalBlue{
-  overflow-y:hidden !important;
-
+.bodyOne .portalBlue {
+  overflow-y: hidden !important;
 }
 
-.btn{
+.btn {
   padding: 20px !important;
   margin-top: 25px !important;
   margin-bottom: 25px !important;
 }
 
-.form-group1{
+.form-group1 {
   margin-top: 30px !important;
 }
 
-
 @media screen and (max-width: 680px) {
-    .containerTwo {
-        display: flex;
-        flex-direction: column;
-    }
+  .containerTwo {
+    display: flex;
+    flex-direction: column;
+  }
 }

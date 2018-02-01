@@ -11,4 +11,9 @@ $(document).ready(function() {
   $(".display-6").fadeIn(2000)
   })
 })
+
+  $("#permaHover").one('mouseover', function(){
+    $('#permaHover').addClass('fancy');
+    $('#permaHover').removeAttr('id')
+  });
 });
