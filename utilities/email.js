@@ -11,7 +11,7 @@ module.exports = {
 			var subject = emailInfo.subject
 			var content = new helper.Content('text/html', emailInfo.message)
 			var mail = new helper.Mail(from_email, subject, to_email, content)
-
+			console.log("apikey", process.env.SENDGRID_API_KEY)
 			var sg = require('sendgrid')(process.env.SENDGRID_API_KEY)
 			var request = sg.emptyRequest({
 				method: 'POST',
